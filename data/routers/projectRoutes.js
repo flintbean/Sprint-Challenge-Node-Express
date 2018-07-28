@@ -2,7 +2,9 @@ const express = require('express');
 const projDb = require('../helpers/projectModel');
 
 const router = express.Router();
-//RETRIEVE LIST OF ACTIONS BY PROJECT WITH /actions/:id
+//RETRIEVE LIST OF ACTIONS BY PROJECT WITH /api/projects/actions/:id
+
+//All routes in projectRoutes default to /api/projects/
 router.get('/', async (req, res, next) => {
     try {
         const projects = await projDb.get();

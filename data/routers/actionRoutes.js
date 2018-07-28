@@ -3,6 +3,7 @@ const actDb = require('../helpers/actionModel');
 
 const router = express.Router();
 
+//All routes in actionRoutes default to /api/actions
 router.get('/', async (req, res, next) => {
     try {
         const actions = await actDb.get();

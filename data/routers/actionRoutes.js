@@ -40,6 +40,7 @@ router.put('/:id', async (req, res, next) => {
         if (!action.project_id || !action.description || !action.notes) { throw new Error("Please fill out project_id, description, and notes") };
         const update = await actDb.update(id, action);
         if (update === null) { throw new Error('Id not found') }
+        res.status(200).send(update)
     } catch (error) {
         next({ code: 501, message: error.message })
     }

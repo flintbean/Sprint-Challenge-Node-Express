@@ -9,6 +9,7 @@ const server = express();
 server.use(express.json());
 server.use(morgan('combined'));
 server.use(helmet());
+
 server.use('/api', apiRoutes);
 
 server.listen(8000, () => console.log('API running on port 8000... *.*'));
